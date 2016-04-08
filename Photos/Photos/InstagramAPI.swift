@@ -33,12 +33,21 @@ class InstagramAPI {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if error == nil {
                 //FIX ME
-                var photos: [Photo]!
+                var photos: [Photo]! = []
                 do {
                     let feedDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     // FILL ME IN, REMEMBER TO USE FORCED DOWNCASTING
+                    //print(feedDictionary["data"]!)
+                    //print(feedDictionary["data"]!)
+                    for element in feedDictionary["data"]! as! [NSDictionary]{
+                        //print(element["caption"]!["from"]!!["username"]!)
+                        //print(Photo(data: element).url)
+                        //print(Photo(data: element).username)
+                        //print(Photo(data: element).likes)
+                        //print(photos)
+                        photos.append(Photo(data: element))
+                    }
                     
-                    photos.append(Photo(data: feedDictionary))
                     
                     // DO NOT CHANGE BELOW
                     let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT

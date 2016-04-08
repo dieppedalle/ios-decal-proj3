@@ -28,14 +28,19 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     /* Creates a session from a photo's url to download data to instantiate a UIImage. 
        It then sets this as the imageView's image. */
-    func collectionView(_ collectionView: UICollectionView,
+    override func collectionView(collectionView: UICollectionView,
                           cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        var  cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellCollection", forIndexPath: indexPath) as UICollectionViewCell
-        
-        cell.imageView.image = photos[cell.row]
+        //let  cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellCollection", forIndexPath: indexPath) as! PhotosCollectionViewCell
+        //print(photos)
+        //cell.imageView.image = loadImageForCell(photos[0], imageView: cell.imageView)
         //cell.titleLabel.text="cellText"
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PhotosCollectionViewCell
+        cell.imageView.image = UIImage(named: "heart_white")
+        cell.backgroundColor = UIColor.whiteColor()
+        
         return cell
     }
+
     
     func loadImageForCell(photo: Photo, imageView: UIImageView) {
         downloadImage(NSURL(fileURLWithPath: photo.url), imageView: imageView)

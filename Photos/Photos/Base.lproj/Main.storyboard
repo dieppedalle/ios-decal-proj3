@@ -37,7 +37,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCollection" id="vHJ-OI-NU7" customClass="PhotosCollectionViewCell" customModule="Photos" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="cellCollection" id="vHJ-OI-NU7" customClass="PhotosCollectionViewCell" customModule="Photos" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -73,7 +73,6 @@
                     <navigationItem key="navigationItem" title="Instagram" id="1CB-CX-5Vv"/>
                     <connections>
                         <outlet property="collectionView" destination="qaK-I6-qCK" id="LMD-s6-DHT"/>
-                        <outlet property="instagramCollectionView" destination="qaK-I6-qCK" id="6j2-Kr-zHM"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2g-r1-BVY" userLabel="First Responder" sceneMemberID="firstResponder"/>

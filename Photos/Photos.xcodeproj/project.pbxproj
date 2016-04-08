@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36B25F5B1CB76EF700E6547F /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B25F5A1CB76EF700E6547F /* PhotosCollectionViewCell.swift */; };
+		36B25F5D1CB77F3F00E6547F /* heart_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B25F5C1CB77F3F00E6547F /* heart_white.png */; };
 		3A1683901BE9B642009F39C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16838F1BE9B642009F39C5 /* AppDelegate.swift */; };
 		3A1683921BE9B642009F39C5 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1683911BE9B642009F39C5 /* PhotosCollectionViewController.swift */; };
 		3A1683951BE9B642009F39C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1683931BE9B642009F39C5 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		36B25F5A1CB76EF700E6547F /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		36B25F5C1CB77F3F00E6547F /* heart_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart_white.png; sourceTree = "<group>"; };
 		3A16838C1BE9B641009F39C5 /* Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16838F1BE9B642009F39C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A1683911BE9B642009F39C5 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				3A1683911BE9B642009F39C5 /* PhotosCollectionViewController.swift */,
+				36B25F5C1CB77F3F00E6547F /* heart_white.png */,
 				36B25F5A1CB76EF700E6547F /* PhotosCollectionViewCell.swift */,
 			);
 			name = Views;
@@ -160,6 +163,7 @@
 			files = (
 				3A16839A1BE9B642009F39C5 /* LaunchScreen.storyboard in Resources */,
 				3A1683971BE9B642009F39C5 /* Assets.xcassets in Resources */,
+				36B25F5D1CB77F3F00E6547F /* heart_white.png in Resources */,
 				3A1683951BE9B642009F39C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
