@@ -20,6 +20,9 @@ class Photo {
     init (data: NSDictionary) {
         // FILL ME IN
         // HINT: use nested .valueForKey() calls, and then cast using 'as! TYPE'
+        likes = data.valueForKey("likes") as! Int
+        url = data.valueForKey("url") as! String
+        username = data.valueForKey("username") as! String
     }
 
 }
