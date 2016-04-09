@@ -15,6 +15,8 @@ class Photo {
     var url : String!
     /* The username of the photographer. */
     var username : String!
+    
+    var created_time : String!
 
     /* Parses a NSDictionary and creates a photo object. */
     init (data: NSDictionary) {
@@ -23,6 +25,8 @@ class Photo {
         likes = data["likes"]!["count"]! as! Int
         url = data["images"]!["standard_resolution"]!!["url"]! as! String?
         username = data["user"]!["username"]! as! String?
+        created_time = data["created_time"]! as! String
+        //print(created_time)
     }
 
 }

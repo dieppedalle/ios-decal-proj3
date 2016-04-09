@@ -37,9 +37,10 @@ class InstagramAPI {
                 do {
                     let feedDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     // FILL ME IN, REMEMBER TO USE FORCED DOWNCASTING
-                    //print(feedDictionary["data"]!)
+                    
                     //print(feedDictionary["data"]!)
                     for element in feedDictionary["data"]! as! [NSDictionary]{
+                        //print(feedDictionary["data"]!["created_time"])
                         //print(element["caption"]!["from"]!!["username"]!)
                         //print(Photo(data: element).url)
                         //print(Photo(data: element).username)

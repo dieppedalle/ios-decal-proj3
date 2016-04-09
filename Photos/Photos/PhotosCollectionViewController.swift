@@ -9,7 +9,18 @@
 import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    
+    @IBOutlet var myCollectionView: UICollectionView!
+    
+    @IBAction func touchButton(sender: AnyObject) {
+        let api = InstagramAPI()
+        api.loadPhotos(didLoadPhotos)
+        self.myCollectionView.reloadData()
+    }
     var photos: [Photo]!
+    
+    var instagramImages = [UIImage]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +29,11 @@ class PhotosCollectionViewController: UICollectionViewController {
         api.loadPhotos(didLoadPhotos)
         // FILL ME IN
         
-        
+        //print("HI")
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 
     /* 
@@ -26,44 +41,67 @@ class PhotosCollectionViewController: UICollectionViewController {
      * Examples include cellForItemAtIndexPath, numberOfSections, etc.
      */
     
-    /* Creates a session from a photo's url to download data to instantiate a UIImage. 
-       It then sets this as the imageView's image. */
-    override func collectionView(collectionView: UICollectionView,
-                          cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
-        //let  cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellCollection", forIndexPath: indexPath) as! PhotosCollectionViewCell
-        //print(photos)
-        //cell.imageView.image = loadImageForCell(photos[0], imageView: cell.imageView)
-        //cell.titleLabel.text="cellText"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! PhotosCollectionViewCell
-        cell.imageView.image = UIImage(named: "heart_white")
-        cell.backgroundColor = UIColor.whiteColor()
-        
-        return cell
-    }
-
-    
-    func loadImageForCell(photo: Photo, imageView: UIImageView) {
-        downloadImage(NSURL(fileURLWithPath: photo.url), imageView: imageView)
-    }
-    
-    func downloadImage(url: NSURL, imageView: UIImageView){
-        print("Download Started")
-        print("lastPathComponent: " + (url.lastPathComponent ?? ""))
-        getDataFromUrl(url) { (data, response, error)  in
-            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                guard let data = data where error == nil else { return }
-                print(response?.suggestedFilename ?? "")
-                print("Download Finished")
-                imageView.image = UIImage(data: data)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "photoDetails") {
+            let photoDetailViewController = segue.destinationViewController as! PhotoDetailViewController
+            if let cell = sender as? UICollectionViewCell, indexPath = collectionView!.indexPathForCell(cell) {
+                // use indexPath
+                
+                photoDetailViewController.imageDetail = UIImage(data: NSData(contentsOfURL: NSURL(string: photos[indexPath.row].url)!)!)!
+                photoDetailViewController.numberLikesDetail = "\(photos[indexPath.row].likes)"
+                photoDetailViewController.usernameDetail = photos[indexPath.row].username
+                photoDetailViewController.dateDetail = photos[indexPath.row].created_time
             }
         }
     }
     
-    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            completion(data: data, response: response, error: error)
-            }.resume()
+    override func collectionView(collectionView: UICollectionView,
+                                 cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! PhotosCollectionViewCell
+        
+        if photos != nil{
+            let url = NSURL(string: photos[indexPath.row].url)!
+            
+            let data = NSData(contentsOfURL: url)!
+            
+            let image = UIImage(data: data)
+            //let image = UIImage(named: carImages[indexPath.row])
+            cell.imageView.image = image
+        }
+        
+        return cell
     }
+    
+    
+    override func numberOfSectionsInCollectionView(collectionView:
+        UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(collectionView: UICollectionView,
+                                 numberOfItemsInSection section: Int) -> Int {
+        if photos == nil{
+            return 0
+        } else{
+            return photos.count
+        }
+        
+    }
+
+    
+    func loadImageForCell(photo: Photo, imageView: UIImageView) {
+        //downloadImage(NSURL(fileURLWithPath: photo.url))
+        let url = NSURL(string: photo.url)!
+        
+        let data = NSData(contentsOfURL: url)!
+        
+        let image = UIImage(data: data)
+        
+        imageView.image = image
+    }
+    
+    
     
     /* Completion handler for API call. DO NOT CHANGE */
     func didLoadPhotos(photos: [Photo]) {
