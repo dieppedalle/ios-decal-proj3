@@ -24,7 +24,7 @@
 		36B25F5A1CB76EF700E6547F /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		36C6FC2C1CB8429500F7B9D3 /* PhotosNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosNavigationViewController.swift; sourceTree = "<group>"; };
 		36C6FC2E1CB8451800F7B9D3 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
-		3A16838C1BE9B641009F39C5 /* Photos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A16838C1BE9B641009F39C5 /* Top Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Top Instagram.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A16838F1BE9B642009F39C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A1683911BE9B642009F39C5 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		3A1683941BE9B642009F39C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		3A16838D1BE9B641009F39C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A16838C1BE9B641009F39C5 /* Photos.app */,
+				3A16838C1BE9B641009F39C5 /* Top Instagram.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A16838B1BE9B641009F39C5 /* Photos */ = {
+		3A16838B1BE9B641009F39C5 /* Top Instagram */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A16839E1BE9B642009F39C5 /* Build configuration list for PBXNativeTarget "Photos" */;
+			buildConfigurationList = 3A16839E1BE9B642009F39C5 /* Build configuration list for PBXNativeTarget "Top Instagram" */;
 			buildPhases = (
 				3A1683881BE9B641009F39C5 /* Sources */,
 				3A1683891BE9B641009F39C5 /* Frameworks */,
@@ -121,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = Photos;
+			name = "Top Instagram";
 			productName = Photos;
-			productReference = 3A16838C1BE9B641009F39C5 /* Photos.app */;
+			productReference = 3A16838C1BE9B641009F39C5 /* Top Instagram.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -154,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A16838B1BE9B641009F39C5 /* Photos */,
+				3A16838B1BE9B641009F39C5 /* Top Instagram */,
 			);
 		};
 /* End PBXProject section */
@@ -325,7 +325,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A16839E1BE9B642009F39C5 /* Build configuration list for PBXNativeTarget "Photos" */ = {
+		3A16839E1BE9B642009F39C5 /* Build configuration list for PBXNativeTarget "Top Instagram" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A16839F1BE9B642009F39C5 /* Debug */,
