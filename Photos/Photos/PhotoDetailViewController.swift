@@ -46,10 +46,13 @@ class PhotoDetailViewController: UIViewController {
         if didLikedDetail == false{
             didLiked.image = UIImage(named: "heart_fill")
             didLikedDetail = true
+            numberLikes.text = String(Int(numberLikesDetail)! + 1) + " Likes"
+            
         }
         else{
             didLiked.image = UIImage(named: "heart_white")
             didLikedDetail = false
+            numberLikes.text = numberLikesDetail + " Likes"
         }
     }
 
